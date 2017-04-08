@@ -1,8 +1,8 @@
-from django.conf.urls import url, include
-from django.contrib import admin
+from django.conf.urls import url
+from django.contrib.auth import views as auth_views
 from . views import signup
 
 urlpatterns = [
-    #url(r'^home/', include('OddJobber.home.urls')),
-    url(r'^signup/', signup),
+    url(r'^signup/', signup, name='signup'),
+    url(r'^login/$', auth_views.login, name='login'),
 ]

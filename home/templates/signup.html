@@ -3,7 +3,7 @@
 {% block content %}
 <form method="POST" action="">
     {% csrf_token %}
-    {{userform}}
+    {{userform.as_p}}
     {{userprofileform}}
     <input type="submit">
 </form>

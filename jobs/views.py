@@ -14,3 +14,6 @@ def createJob(request):
         newjob.save()
         return HttpResponseRedirect('/jobs/createJob')
     return render(request, 'createJob.html')
+
+def listJobs(request):
+    return render(request, 'listJobs.html')
