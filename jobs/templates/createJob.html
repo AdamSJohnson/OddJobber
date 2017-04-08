@@ -5,6 +5,19 @@
     <title>Create a job</title>
 </head>
 <body>
-<form enctype="multipart/form-data" 
+<h1>Create a job</h1>
+<form enctype="multipart/form-data" method="post"> {% csrf_token %}
+    Job title:<br>
+    <input type="text" name="jobtitle"><br>
+    Description:<br>
+    <input type="text" name="description"><br>
+    Suggested price:<br>
+    <input type="number" name="price"><br>
+    Zip code:<br>
+    <input type="text" name="zipcode"><br>
+    Due date:<br>
+    <input type="date" name="duedate"><br>
+    <input type="submit">
+</form>
 </body>
 </html>
