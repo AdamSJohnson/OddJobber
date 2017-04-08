@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Job Listings</title>
-</head>
-<body>
+{% extends "base.html" %}
 
+{% block content %}
     <table>
         <tr>
             <td> Title </td>
@@ -24,6 +19,4 @@
             {% endfor %}
         {% endif %}
     </table>
-
-</body>
-</html>
+{% endblock %}
