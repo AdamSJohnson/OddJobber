@@ -2,7 +2,6 @@ from django.shortcuts import render
 from . forms import UserForm, UserProfileForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
-from django.template import RequestContext
 
 def signup(request):
     if request.method == 'POST':
@@ -19,5 +18,5 @@ def signup(request):
         uf = UserForm(prefix='user')
         upf = UserProfileForm(prefix = 'userprofile')
     return render_to_response('signup.html',
-                               dict(userform = uf, userprofileform = upf),
-                               context_instance = RequestContext(request))
+                               dict(userform = uf, userprofileform = upf))
+
