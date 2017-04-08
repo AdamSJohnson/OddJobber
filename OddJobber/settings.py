@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
-    #'jobs',
+    'jobs',
 ]
 
 MIDDLEWARE = [
@@ -67,8 +67,11 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
+        'TEMPLATE_CONTEXT_PROCESSORS':
+            ['django.core.context_processors.request']
     },
 ]
+
 
 WSGI_APPLICATION = 'OddJobber.wsgi.application'
 

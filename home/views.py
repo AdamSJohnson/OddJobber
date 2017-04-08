@@ -20,3 +20,8 @@ def signup(request):
     return render_to_response('signup.html',
                                dict(userform = uf, userprofileform = upf))
 
+def home(request):
+    return render(
+        request,
+        'home.html',
+    )
