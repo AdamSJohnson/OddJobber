@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def createJob(request):
-    return HttpResponse("<title>Hello, world.</title>")
+    return render(request, 'createJob.html')
