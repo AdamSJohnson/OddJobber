@@ -72,7 +72,6 @@ TEMPLATES = [
     },
 ]
 
-
 WSGI_APPLICATION = 'OddJobber.wsgi.application'
 
 
