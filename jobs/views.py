@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from . import models
+from django.db import models
+from jobs.models import Job
 
 def createJob(request):
     if request.method == "POST":
@@ -16,4 +17,5 @@ def createJob(request):
     return render(request, 'createJob.html')
 
 def listJobs(request):
-    return render(request, 'listJobs.html')
+    jobs_list = Job.objects.all()
+    return render(request, 'listJobs.html', {'jobs': jobs_list})
