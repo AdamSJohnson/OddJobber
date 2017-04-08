@@ -5,6 +5,7 @@ from . models import UserProfile
 class UserForm(ModelForm):
     class Meta:
         model = User
+        fields = '__all__'
 
 class UserProfileForm(ModelForm):
     class Meta:
