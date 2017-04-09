@@ -6,7 +6,7 @@
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {% load static %}
-      <img src= "{{ user.avatar }}"/>
+      <img src= "static/pic_folder/{{ user.get_profile.avatar }}"/>
       <p>{{ user.email }}</p>
       <p>{{ user.first_name }} {{ user.last_name }}</p>
       <p>{{ user.phone }}</p>
