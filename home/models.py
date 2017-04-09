@@ -47,6 +47,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     city = models.CharField(max_length=30, default='Enter City')
     state = models.CharField(max_length=30, default='Enter State Abbreviation')
     zipcode = models.CharField(max_length=30, default='Enter 5-Digit Zipcode')
+    avatar = models.ImageField(upload_to = 'static/pic_folder/')
 
     is_staff = models.BooleanField(
         _('staff status'),
