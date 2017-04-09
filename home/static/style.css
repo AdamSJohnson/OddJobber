@@ -1,12 +1,4 @@
-/*
-#21111f
-
-#9e8b84
-
-#fbf7ec
- */
-
-header > *,  main > * {
+main > * {
     border: 1px solid cyan;
 }
 
@@ -23,14 +15,35 @@ body {
     padding: 0;
 }
 
-header {
+header .navigation {
     background-color: #21111f;
     color: #fbf7ec;
-    height: 32px;
+    display: flex;
+}
+
+header .navigation div {
+    line-height: 48px;
+}
+
+header .navigation .center {
+    flex: 1;
+    text-align: center;
 }
 
 header header a, header a:hover, header a:visited {
     color: #fbf7ec;
+}
+
+header .head {
+    background-color: #9e8b84;
+    color: #fbf7ec;
+}
+
+header .head h1 {
+    margin: 0 auto;
+    line-height: 64px;
+    font-size: 16pt;
+    margin: 0 0 0 24px;
 }
 
 main {

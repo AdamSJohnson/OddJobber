@@ -1,6 +1,8 @@
 {% extends "base.html" %}
+
+{% block title %}Search Jobs{% endblock %}
+{% block head %}Search Jobs{% endblock %}
 {% block content %}
-<h1>Search Jobs</h1>
 {% if error_string is not None %}
     <span style="color:red;"> {{ error_string }} </span>
 {% endif %}
