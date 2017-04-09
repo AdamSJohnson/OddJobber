@@ -18,9 +18,9 @@ from django.forms.models import inlineformset_factory
 from django.core.exceptions import PermissionDenied
 
 class signup(CreateView):
-    template_name = 'signup_create.html'
+    template_name = 'home.html'
     form_class = UserCreationForm
-    success_url = '/home/'
+    success_url = '/home/login/'
 
 def home(request):
     return render(

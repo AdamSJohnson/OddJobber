@@ -3,5 +3,10 @@
 {% block title %}Home{% endblock %}
 {% block head %}Home Page{% endblock %}
 {% block content %}
-<p>The home page.</p>
-{% endblock %}
+<p>Sign Up</p>
+<form method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+</form>
+{% endblock content %}
