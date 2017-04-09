@@ -69,11 +69,21 @@ main .content form p {
     display: table-row;
 }
 
-main .content form p label, main .content form p input {
+main .content form p label {
+    text-align: right;
     display: table-cell;
 }
 
-footer {
+main .content form p input {
+    display: table-cell;
+}
+
+footer .upper {
+    background-color: #fbf7ec;
+    height: 48px;
+}
+
+footer .lower {
     background-color: #21111f;
     color: #fbf7ec;
     text-align: center;
