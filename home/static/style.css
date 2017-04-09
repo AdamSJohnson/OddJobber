@@ -91,9 +91,39 @@ main .content form p input {
     margin: 8px;
 }
 
+main .content table {
+    /*border: 1px solid black;*/
+    border: 0;
+    border-collapse: collapse;
+}
+
+main .content th {
+    font-size: 12px;
+}
+
+main .content th h2 {
+    padding: 0;
+    margin: 0;
+}
+
+main .content tr, main .content th, main .content td {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 0;
+    border-left: 0;
+    /*border: 1px solid black;*/
+}
+
+main .content th {
+    font-size: 12px;
+}
+
+main .content tr:nth-child(2n+1) {
+    background-color: #fbf7ec;
+}
+
 footer .upper {
     background-color: #9e8b84;
-    /*background-color: #fbf7ec;*/
     height: 48px;
 }
 
