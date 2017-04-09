@@ -19,8 +19,8 @@ def createJob(request):
 def listJobs(request):
     error_string = None
     if request.method == "POST":
-        error_string = validateJobSearch
-        if error_string is not None:
+        error_string = validateJobSearch(request)
+        if error_string is None:
             jobs_list = Job.objects.all()
             return render(request, 'listJobs.html', {'jobs': jobs_list})
     return render(request, 'searchJobs.html', {'error_string': error_string})
