@@ -9,6 +9,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    font-family: "Lucida Bright", "Palatino Linotype", "Book Antiqua", "serif";
 }
 
 header .navigation {
@@ -22,9 +23,13 @@ header .navigation {
 }
 
 header a {
-    line-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
     padding: 0 8px;
+    height: 80px;
+    font-size: 18pt;
 }
 
 header a, header a:hover, header a:visited {
@@ -36,15 +41,14 @@ header a:hover {
     background-color: #31212f;
 }
 
-header .head {
+header h1 {
     background-color: #9e8b84;
     color: #fbf7ec;
-}
-
-header .head h1 {
     line-height: 64px;
     font-size: 16pt;
-    margin: 0 0 0 24px;
+    margin: 0;
+    padding-left: 24px;
+    font-weight: normal;
 }
 
 main {
@@ -61,5 +65,5 @@ footer {
     background-color: #21111f;
     color: #fbf7ec;
     text-align: center;
-    line-height: 32px;
+    line-height: 48px;
 }

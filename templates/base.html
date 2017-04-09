@@ -8,7 +8,7 @@
     <body>
         <header>
             <div class="navigation">
-                <a href="{% url 'home' %}">OddJobber</a>
+                <a href="{% url 'home' %}"><img src="/static/logo.png"></a>
                 <div class="fill"></div>
                 {% if user.is_authenticated %}
                     <a href="{% url 'create_jobs' %}">Create Job</a>
@@ -22,9 +22,7 @@
                     <a href="{% url 'signup' %}"><b>Sign up</b></a>
                 {% endif %}
             </div>
-            <div class="head">
-                <h1>{% block head %}{% endblock %}</h1>
-            </div>
+            <h1>{% block head %}{% endblock %}</h1>
         </header>
         <main>
             <div class="fill"></div>
@@ -33,9 +31,6 @@
             </div>
             <div class="fill"></div>
         </main>
-        <footer>
-            <!--div></div-->
-            <div>Copyright 2017 OddJobber.</div>
-        </footer>
+        <footer>Copyright 2017 OddJobber.</footer>
     </body>
 </html>
