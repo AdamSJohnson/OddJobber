@@ -3,14 +3,11 @@
 {% block title %}Your Profile{% endblock %}
 {% block head %}Your Profile{% endblock %}
 {% block content %}
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {% load static %}
-      <img src= "{{ user.avatar.url }}"/>
-      <p>{{ user.email }}</p>
-      <p>{{ user.first_name }} {{ user.last_name }}</p>
-      <p>{{ user.phone }}</p>
-      <p>{{ user.street }} {{ user.city }} {{ user.state }} {{ user.zipcode }}</p>
-    <a href="{% url 'edit_profile' %}">Edit</a>
-  </form>
+{% load static %}
+<img src= "{{ user.avatar.url }}"/>
+<p>{{ user.email }}</p>
+<p>{{ user.first_name }} {{ user.last_name }}</p>
+<p>{{ user.phone }}</p>
+<p>{{ user.street }} {{ user.city }} {{ user.state }} {{ user.zipcode }}</p>
+<a href="{% url 'edit_profile' %}">Edit</a>
 {% endblock %}
