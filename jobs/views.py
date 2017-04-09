@@ -33,6 +33,10 @@ def search_jobs(request):
                 print("MinPrice = " + request.POST.get('price_low'))
                 minPrice = request.POST.get('price_low')
                 newlist = jobs_list.filter(price__range=[minPrice, maxPrice])
+                if 'jobtitle' in request.POST:
+                    newlist = newlist.filter(jobtitle__contains=request.POST.get('jobtitle'))
+                if 'description' in request.POST:
+                    newlist = newlist.filter(description__contains=request.POST.get('description'))
                 if newlist:
                    jobs_list = newlist
         return render(request, 'list_jobs.html', {'jobs': jobs_list})
