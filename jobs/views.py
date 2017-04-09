@@ -3,13 +3,15 @@ from django.views.generic.edit import CreateView
 from .models import Job
 from . import forms
 
-class createJob(CreateView):
+class create_job(CreateView):
     model = Job
     success_url = '/home'
     form_class = forms.JobForm
 
+def search_jobs(request):
+    pass
 
-def listJobs(request):
+def list_jobs(request):
     def validateJobSearch(request):
         pass
 
@@ -18,5 +20,5 @@ def listJobs(request):
         error_string = validateJobSearch(request)
         if error_string is not None:
             jobs_list = Job.objects.all()
-            return render(request, 'listJobs.html', {'jobs': jobs_list})
-    return render(request, 'searchJobs.html', {'error_string': error_string})
+            return render(request, 'list_jobs.html', {'jobs': jobs_list})
+    return render(request, 'search_jobs.html', {'error_string': error_string})
