@@ -15,7 +15,9 @@ def search_jobs(request):
         jobs_list = Job.objects.all()
         for fieldval in request.POST:
             if fieldval in allowed_tokens:
-                jobs_list.filter(**{fieldval: request.POST.get(fieldval)})
+              newlist = jobs_list.filter(**{fieldval: request.POST.get(fieldval)})
+              if newlist:
+                  jobs_list = newlist
         return render(request, 'list_jobs.html', {'jobs': jobs_list})
     return render(request, 'search_jobs.html', {'jobs': None})
 
