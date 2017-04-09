@@ -6,8 +6,8 @@ from django.contrib.auth.forms import PasswordResetForm
 from django.shortcuts import redirect
 from django.views.generic import CreateView, DetailView, UpdateView
 
-from . forms import UserCreationForm
-from django.urls import reverse
+from . forms import UserCreationForm, UserForm
+from django.urls import reverse_lazy
 
 
 from django.shortcuts import render, HttpResponseRedirect
@@ -39,11 +39,18 @@ class myprofile(DetailView):
         return self.request.user
 
 #@login_required()
-class editProfile(UpdateView):
+class edit_profile(UpdateView):
     model = User
-    form = ['first_name']
-    template = 'profile_edit.html'
+    fields = ['first_name']
+    template_name = 'profile_edit.html'
+    form = UserForm
+    success_url = reverse_lazy('profile')
+
+
+    def get_object(self):
+        print(self.request.user)
+        return self.request.user
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect(reverse('home'))
+    return HttpResponseRedirect(reverse_lazy('home'))
