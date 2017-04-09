@@ -61,6 +61,18 @@ main .content {
     margin: 0 auto;
 }
 
+main .content form {
+    display: table;
+}
+
+main .content form p {
+    display: table-row;
+}
+
+main .content form p label, main .content form p input {
+    display: table-cell;
+}
+
 footer {
     background-color: #21111f;
     color: #fbf7ec;

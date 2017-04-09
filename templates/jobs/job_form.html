@@ -3,7 +3,10 @@
 {% block title %}Create Job{% endblock %}
 {% block head %}Create Job{% endblock %}
 {% block content %}
-<form enctype="multipart/form-data" method="post"> {% csrf_token %}
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {{  form.as_p }}
+    <!--
     Job title:<br>
     {{ form.jobtitle }}<br>
     Description:<br>
@@ -17,5 +20,6 @@
     Tags:<br>
     {{ form.tags }}<br>
     <input type="submit">
+    -->
 </form>
 {% endblock %}

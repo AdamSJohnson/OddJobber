@@ -6,26 +6,40 @@
 {% if error_string is not None %}
     <span style="color:red;"> {{ error_string }} </span>
 {% endif %}
-<form enctype="multipart/form-data" method="POST"> {% csrf_token %}
-    <label for="jobtitle"> Title Contains: </label>
-    <input type="text" id="jobtitle" name="jobtitle"><br>
-    <label for="description"> Description Contains: </label>
-    <input type="text" id="description" name="description"><br>
-    <label for="price">Price</label>
-    <input type="range" id="price" name="price"><br>
-    <input type="number" id="pricehigh" name="pricehigh"><br>
-    <label for="zipcode"> Zip code: </label>
-    <input type="text" id="zipcode" name="zipcode"><br>
-    <label for="due_date_low">Expires After:</label>
-    <input type="date" id="due_date_low" name="due_date_low"><br>
-    <label for="due_date_high"> Expires Before: </label>
-    <input type="date" id="due_date_high" name="due_date_high"><br>
-    <label for="tags"> Tags: </label>
-    <select id="tags" name="tags" size="4" multiple>
-        <option>Tag 1</option>
-        <option>Tag 2</option>
-        <option>Tag 3</option>
-    </select><br>
-    <input type="submit">
+<form enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    <p>
+        <label for="jobtitle">Title Contains:</label>
+        <input type="text" id="jobtitle" name="jobtitle">
+    </p>
+    <p>
+        <label for="description">Description Contains:</label>
+        <input type="text" id="description" name="description">
+    </p>
+    <p>
+        <label for="price">Price</label>
+        <input type="range" id="price" name="price">
+        <input type="number" id="pricehigh" name="pricehigh">
+    <p>
+        <label for="zipcode">Zip code:</label>
+        <input type="text" id="zipcode" name="zipcode">
+    </p>
+    <p>
+        <label for="due_date_low">Expires After:</label>
+        <input type="date" id="due_date_low" name="due_date_low">
+    </p>
+    <p>
+        <label for="due_date_high">Expires Before:</label>
+        <input type="date" id="due_date_high" name="due_date_high">
+    </p>
+    <p>
+        <label for="tags">Tags:</label>
+        <select id="tags" name="tags" size="4" multiple>
+            <option>Tag 1</option>
+            <option>Tag 2</option>
+            <option>Tag 3</option>
+        </select>
+    </p>
+    <input type="submit" value="Search">
 </form>
 {% endblock %}
