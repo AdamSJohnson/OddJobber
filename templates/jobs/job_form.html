@@ -6,20 +6,6 @@
 <form enctype="multipart/form-data" method="post">
     {% csrf_token %}
     {{  form.as_p }}
-    <!--
-    Job title:<br>
-    {{ form.jobtitle }}<br>
-    Description:<br>
-    {{ form.description }}<br>
-    Suggested price:<br>
-    {{ form.price }}<br>
-    Zip code:<br>
-    {{ form.zipcode }}<br>
-    Due date:<br>
-    {{ form.due_date }}<br>
-    Tags:<br>
-    {{ form.tags }}<br>
     <input type="submit">
-    -->
 </form>
 {% endblock %}

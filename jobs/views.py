@@ -6,7 +6,7 @@ from . import forms
 
 class create_job(CreateView):
     model = Job
-    success_url = '/home'
+    success_url = 'jobs/search_jobs'
     form_class = forms.JobForm
 
 def search_jobs(request):
