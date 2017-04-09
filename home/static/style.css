@@ -1,7 +1,3 @@
-main > * {
-    border: 1px solid cyan;
-}
-
 html {
     height: 100%;
 }
@@ -21,17 +17,23 @@ header .navigation {
     display: flex;
 }
 
-header .navigation div {
-    line-height: 48px;
-}
-
-header .navigation .center {
+.fill {
     flex: 1;
-    text-align: center;
 }
 
-header header a, header a:hover, header a:visited {
+header a {
+    line-height: 80px;
+    text-align: center;
+    padding: 0 8px;
+}
+
+header a, header a:hover, header a:visited {
     color: #fbf7ec;
+    text-decoration: none;
+}
+
+header a:hover {
+    background-color: #31212f;
 }
 
 header .head {
@@ -40,7 +42,6 @@ header .head {
 }
 
 header .head h1 {
-    margin: 0 auto;
     line-height: 64px;
     font-size: 16pt;
     margin: 0 0 0 24px;
@@ -48,6 +49,12 @@ header .head h1 {
 
 main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+main .content {
+    margin: 0 auto;
 }
 
 footer {
