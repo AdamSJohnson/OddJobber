@@ -28,6 +28,10 @@ def search_jobs(request):
         if 'due_date_high' in request.POST:
                 maxDate = request.POST.get('due_date_high')
         newlist = jobs_list.filter(due_date__range= [minDate, maxDate])
+        if 'jobtitle' in request.POST:
+            newlist = jobs_list.filter(jobtitle__contains= request.POST.get('jobtitle'))
+        if 'description' in request.POST:
+            newlist = jobs_list.filter(description__contains= request.POST.get('description'))
         if newlist:
             jobs_list = newlist
 
