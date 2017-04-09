@@ -7,4 +7,4 @@ class JobForm(ModelForm):
 
     class Meta:
         model = Job
-        fields = ['title', 'description', 'price', 'zipcode', 'due_date', 'tags', ]
+        fields = ['jobtitle', 'description', 'price', 'zipcode', 'due_date', 'tags', ]

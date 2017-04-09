@@ -11,10 +11,11 @@
         {% if jobs %}
             {% for job in jobs %}
                 <tr>
-                    <td>{{ job.title }}</td>
+                    <td>{{ job.jobtitle }}</td>
                     <td>{{ job.price }}</td>
                     <td>{{ job.due_date }}</td>
                     <td>{{ job.description }}</td>
+                    <input type = "submit" value="Inquire" method="POST">
                 </tr>
             {% endfor %}
         {% endif %}

@@ -14,8 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.contrib.staticfiles.urls import static
+from django.urls import reverse, reverse_lazy
 from django.contrib import admin
-from django.http import HttpResponseRedirect
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from . import settings
+from django.shortcuts import redirect
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -23,3 +27,6 @@ urlpatterns = [
     url(r'^$', lambda r: HttpResponseRedirect('home/')),
     url(r'^home/', include('home.urls')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

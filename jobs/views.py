@@ -9,7 +9,15 @@ class create_job(CreateView):
     form_class = forms.JobForm
 
 def search_jobs(request):
-    pass
+    if request.method == "POST":
+        allowed_tokens = ['jobtitle', 'description', 'zipcode', 'price',
+                          'tags', 'due_date']
+        jobs_list = Job.objects.all()
+        for fieldval in request.POST:
+            if fieldval in allowed_tokens:
+                jobs_list.filter(**{fieldval: request.POST.get(fieldval)})
+        return render(request, 'list_jobs.html', {'jobs': jobs_list})
+    return render(request, 'search_jobs.html', {'jobs': None})
 
 def list_jobs(request):
     def validateJobSearch(request):
@@ -19,6 +27,5 @@ def list_jobs(request):
     if request.method == "POST":
         error_string = validateJobSearch(request)
         if error_string is not None:
-            jobs_list = Job.objects.all()
-            return render(request, 'list_jobs.html', {'jobs': jobs_list})
-    return render(request, 'search_jobs.html', {'error_string': error_string})
+            return search_jobs(request)
+    return render(request, 'list_jobs.html', {'error_string': error_string})
