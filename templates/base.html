@@ -8,8 +8,10 @@
     <body>
         <header>
         <!-- div class="navbar" -->
+
             <div class="navbar-side navbar-left"></div>
             <div class="navbar-content">
+            <span>OddJobber</span>
                 {% if user.is_authenticated %}
                     <a href="{% url 'home' %}">Home</a>
                     <a href="{% url 'create_jobs' %}">Create Jobs</a>
@@ -27,8 +29,6 @@
         <main>
             {% block content %}{% endblock content %}
         </main>
-        <footer>
-            Copyright 2017 OddJobber.
-        </footer>
+        <footer>Copyright 2017 OddJobber.</footer>
     </body>
 </html>

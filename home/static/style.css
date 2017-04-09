@@ -6,21 +6,40 @@
 #fbf7ec
  */
 
-* {
+header > *,  main > * {
     border: 1px solid cyan;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 header {
     background-color: #21111f;
     color: #fbf7ec;
+    height: 32px;
 }
 
 header header a, header a:hover, header a:visited {
     color: #fbf7ec;
 }
 
+main {
+    flex: 1;
+}
+
 footer {
     background-color: #21111f;
     color: #fbf7ec;
     text-align: center;
+    line-height: 32px;
 }
