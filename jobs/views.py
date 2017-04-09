@@ -1,29 +1,22 @@
-from django.shortcuts import render
-from django.http import HttpResponseRedirect
-from django.db import models
-from jobs.models import Job
+from django.shortcuts import render, redirect
+from django.views.generic.edit import CreateView
+from .models import Job
+from . import forms
 
-def createJob(request):
-    if request.method == "POST":
-        title = request.POST.get("jobtitle")
-        description = request.POST.get("description")
-        price = request.POST.get("price")
-        zipcode = request.POST.get('zipcode')
-        duedate = request.POST.get('duedate')
-        newjob = models.Job(title=title, description=description,
-                            price=price, zipcode=zipcode, due_date=duedate)
-        newjob.save()
-        return HttpResponseRedirect('/jobs/createJob')
-    return render(request, 'createJob.html')
+class createJob(CreateView):
+    model = Job
+    success_url = '/home'
+    form_class = forms.JobForm
+
 
 def listJobs(request):
+    def validateJobSearch(request):
+        pass
+
     error_string = None
     if request.method == "POST":
-        error_string = validateJobSearch
+        error_string = validateJobSearch(request)
         if error_string is not None:
             jobs_list = Job.objects.all()
             return render(request, 'listJobs.html', {'jobs': jobs_list})
     return render(request, 'searchJobs.html', {'error_string': error_string})
-
-def validateJobSearch(request):
-    pass

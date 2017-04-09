@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Create a job</h1>
+<form enctype="multipart/form-data" method="post"> {% csrf_token %}
+    Job title:<br>
+    {{ form.title }}<br>
+    Description:<br>
+    {{ form.description }}<br>
+    Suggested price:<br>
+    {{ form.price }}<br>
+    Zip code:<br>
+    {{ form.zipcode }}<br>
+    Due date:<br>
+    {{ form.due_date }}<br>
+    Tags:<br>
+    {{ form.tags }}<br>
+    <input type="submit">
+</form>
+{% endblock %}
