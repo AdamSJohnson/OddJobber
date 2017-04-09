@@ -11,4 +11,4 @@ class Job(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=5)
     tags = TaggableManager()
     due_date = models.CharField(default='', max_length=10)
-    creator = models.ForeignKey('home.User', default=None)
+    job_creator = models.ForeignKey('home.User', default=None)
