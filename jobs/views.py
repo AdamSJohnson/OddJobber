@@ -6,8 +6,9 @@ from . import forms
 
 class create_job(CreateView):
     model = Job
-    success_url = 'jobs/search_jobs'
+    template_name = 'jobs/job_form.html'
     form_class = forms.JobForm
+    success_url = 'jobs/search_jobs'
 
 def search_jobs(request):
     if request.method == "POST":
