@@ -40,7 +40,13 @@ from django.utils.translation import ugettext_lazy as _
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True, null=True)
-    first_name = models.CharField(max_length=30, default='jobber')
+    first_name = models.CharField(max_length=30, default='First Name')
+    last_name = models.CharField(max_length=30, default='Last Name')
+    phone = models.CharField(max_length=30, default='xxx-xxx-xxxx')
+    street = models.CharField(max_length=30, default='Enter Street Address')
+    city = models.CharField(max_length=30, default='Enter City')
+    state = models.CharField(max_length=30, default='Enter State Abbreviation')
+    zipcode = models.CharField(max_length=30, default='Enter 5-Digit Zipcode')
 
     is_staff = models.BooleanField(
         _('staff status'),
