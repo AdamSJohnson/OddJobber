@@ -6,7 +6,11 @@
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {% load static %}
-      <img src= "static/pic_folder/{{ user.get_profile.avatar }}"/>
+    {% if user.avatar == None %}
+      <img src="noimage" />
+    {% else %}
+      <img src= "{{ user.avatar.url }}"/>
+    {% endif %}
       <p>{{ user.email }}</p>
       <p>{{ user.first_name }} {{ user.last_name }}</p>
       <p>{{ user.phone }}</p>

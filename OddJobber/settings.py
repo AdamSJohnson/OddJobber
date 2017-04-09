@@ -29,8 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'home.User'
 LOGIN_REDIRECT_URL = 'profile'
-
-
+MEDIA_URL= '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'OddJobber/media')
 
 # Application definition
 
@@ -146,5 +146,5 @@ STATICFILES_FINDERS = (
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-MEDIA_URL='/media/'
-MEDIA_ROOT = 'http://localhost:8000/media/'
+#MEDIA_URL='/media/'
+#MEDIA_ROOT = 'http://localhost:8000/media/'

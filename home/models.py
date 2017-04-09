@@ -39,7 +39,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    avatar = models.ImageField(upload_to='static/pic_folder/', blank = True)
+    avatar = models.ImageField(upload_to="pic_folder", default='pic_folder/default.jpg')
     email = models.EmailField(unique=True, null=True)
     first_name = models.CharField(max_length=30, default='First Name')
     last_name = models.CharField(max_length=30, default='Last Name')
