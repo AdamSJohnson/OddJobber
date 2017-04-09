@@ -87,8 +87,12 @@ WSGI_APPLICATION = 'OddJobber.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '104.196.180.212',
+        'PORT': '3306',
+        'USER': 'oddjobber_db_user',
+        'PASSWORD': '4P4NXjbPEsgc9xwi68oyNXizGEGwmPY4',
+        'NAME': 'OddJobber',
     }
 }
 

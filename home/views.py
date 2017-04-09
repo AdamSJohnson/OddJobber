@@ -7,10 +7,12 @@ from django.shortcuts import redirect
 from django.views.generic import CreateView, DetailView, UpdateView
 
 from . forms import UserCreationForm
+from django.urls import reverse
 
 
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 from . models import User
 from django.forms.models import inlineformset_factory
 from django.core.exceptions import PermissionDenied
@@ -36,11 +38,12 @@ class myprofile(DetailView):
         print(self.request.user)
         return self.request.user
 
-
 #@login_required()
 class editProfile(UpdateView):
     model = User
     form = ['first_name']
     template = 'profile_edit.html'
 
-
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('home'))
