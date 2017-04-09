@@ -10,14 +10,22 @@ class create_job(CreateView):
 
 def search_jobs(request):
     if request.method == "POST":
-        allowed_tokens = ['jobtitle', 'description', 'zipcode', 'price',
-                          'tags', 'due_date']
+        bool_tokens = ['jobtitle', 'description', 'zipcode', 'price',
+                      'tags', 'due_date']
         jobs_list = Job.objects.all()
         for fieldval in request.POST:
-            if fieldval in allowed_tokens:
+            if fieldval in bool_tokens:
               newlist = jobs_list.filter(**{fieldval: request.POST.get(fieldval)})
               if newlist:
                   jobs_list = newlist
+        if 'due_date_low' in request.POST:
+                minDate = request.POST.get('due_date_low')
+        if 'due_date_high' in request.POST:
+                maxDate = request.POST.get('due_date_high')
+        if minDate is not None and maxDate is not None:
+            newlist = jobs_list.filter(due_date__range= [minDate, maxDate])
+            if newlist:
+                jobs_list = newlist
         return render(request, 'list_jobs.html', {'jobs': jobs_list})
     return render(request, 'search_jobs.html', {'jobs': None})
 
