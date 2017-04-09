@@ -7,9 +7,20 @@
  */
 
 * {
-    border: 1px solid black;
+    border: 1px solid cyan;
+}
+
+header {
+    background-color: #21111f;
+    color: #fbf7ec;
+}
+
+header header a, header a:hover, header a:visited {
+    color: #fbf7ec;
 }
 
 footer {
+    background-color: #21111f;
+    color: #fbf7ec;
     text-align: center;
 }
