@@ -22,6 +22,7 @@ from . import settings
 from django.shortcuts import redirect
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import HttpResponseRedirect
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
