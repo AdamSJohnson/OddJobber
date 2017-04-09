@@ -21,13 +21,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '2rod0yp6#u%%rvtng9=$owhr%*zk+l-fcrpj$7iz3hy25nd2ss'
+ACCOUNT_SIGNUP_FORM_CLASS = 'OddJobber.home.forms.UserCreationForm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'home.User'
 
-AUTH_USER_MODEL = "home.UserProfile"
+
 
 # Application definition
 
@@ -66,14 +68,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
+
 ]
 
-TEMPLATE_CONTEXT_PROCESSORS = [
-    'django.core.context_processors.request',
-]
+
 
 WSGI_APPLICATION = 'OddJobber.wsgi.application'
 
