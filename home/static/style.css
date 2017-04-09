@@ -79,3 +79,11 @@ footer {
     text-align: center;
     line-height: 48px;
 }
+
+th {
+    padding: 15px;
+}
+
+td {
+    padding: 10px;
+}

@@ -1,24 +1,26 @@
 {% extends "base.html" %}
-
 {% block title %}Job Listing{% endblock %}
 {% block head %}Job Listing{% endblock %}
 {% block content %}
     <table>
         <tr>
-            <td> Title </td>
-            <td> Price </td>
-            <td> Expires </td>
-            <td> Description </td>
+            <th><h2>Title</h2></th>
+            <th><h2>Price</h2></th>
+            <th><h2>Expires</h2></th>
+            <th><h2>Zip Code</h2></th>
+            <th><h2>Description</h2></th>
+            <th></th>
         </tr>
         {% if jobs %}
             {% for job in jobs %}
-                <tr>
-                    <td>{{ job.jobtitle }}</td>
-                    <td>{{ job.price }}</td>
-                    <td>{{ job.due_date }}</td>
-                    <td>{{ job.description }}</td>
-                    <td><input type = "submit" value="Inquire" method="POST"></td>
-                </tr>
+            <tr>
+                <td>{{ job.jobtitle }}</td>
+                <td>{{ job.price }}</td>
+                <td>{{ job.due_date }}</td>
+                <td>{{ job.zipcode }}</td>
+                <td>{{ job.description }}</td>
+                <td><input type = "submit" value="Inquire" method="POST"></td>
+            </tr>
             {% endfor %}
         {% endif %}
     </table>
