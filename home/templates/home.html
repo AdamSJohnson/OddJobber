@@ -3,7 +3,7 @@
 {% block title %}Home{% endblock %}
 {% block head %}Home Page{% endblock %}
 {% block content %}
-<p>Sign Up</p>
+<h2 style = "align:center; vertical-align:middle;">Sign Up</h2>
 <form method="POST" action="">
     {% csrf_token %}
     {{form.as_p}}
