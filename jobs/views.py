@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView
+from django.template import RequestContext
 from .models import Job
+from django.core.mail import send_mail
 import datetime
 
 from . import forms
@@ -35,15 +37,26 @@ def search_jobs(request):
                 newlist = jobs_list.filter(price__range=[minPrice, maxPrice])
                 if newlist:
                    jobs_list = newlist
-        return render(request, 'list_jobs.html', {'jobs': jobs_list})
-    return render(request, 'search_jobs.html', {'jobs': None})
+            if 'email' in request.POST:
+                email = request.POST.get('email')
+                send_mail(
+                    'Someone on OddJobber wants to work for you!',
+                    'Check it out at OddJobber',
+                    'oddjobber@oddjobber.me',
+                    [email],
+                    fail_silently=False,)
+        return render(request, 'list_jobs.html', {'jobs': jobs_list}, RequestContext(request))
+    return render(request, 'search_jobs.html', {'jobs': None}, RequestContext(request))
 
 def list_jobs(request):
     def validateJobSearch(request):
         pass
     error_string = None
     if request.method == "POST":
+        email = request.POST.get('email')
+        print(email)
         error_string = validateJobSearch(request)
         if error_string is not None:
             return search_jobs(request)
+        return search_jobs(request)
     return render(request, 'list_jobs.html', {'error_string': error_string})

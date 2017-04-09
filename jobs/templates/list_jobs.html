@@ -9,17 +9,22 @@
             <th><h2>Expires</h2></th>
             <th><h2>Zip Code</h2></th>
             <th><h2>Description</h2></th>
+            <th><h2>Email</h2></th>
             <th></th>
         </tr>
         {% if jobs %}
             {% for job in jobs %}
             <tr>
+                <form action = "" enctype="multipart/form-data" method="POST">{% csrf_token %}
                 <td>{{ job.jobtitle }}</td>
                 <td>{{ job.price }}</td>
                 <td>{{ job.due_date }}</td>
                 <td>{{ job.zipcode }}</td>
                 <td>{{ job.description }}</td>
-                <td><input type = "submit" value="Inquire" method="POST"></td>
+                <td>{{ job.job_creator }}</td>
+                <td><input type = "submit" value="{{ job.job_creator }}" method="POST"
+                           id = "email" name="email"></td>
+                </form>
             </tr>
             {% endfor %}
         {% endif %}

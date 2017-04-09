@@ -148,3 +148,10 @@ STATICFILES_FINDERS = (
 
 #MEDIA_URL='/media/'
 #MEDIA_ROOT = 'http://localhost:8000/media/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
