@@ -145,3 +145,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+
+MEDIA_URL='/media/'
+MEDIA_ROOT = 'http://localhost:8000/media/'
