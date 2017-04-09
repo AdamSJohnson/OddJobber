@@ -57,6 +57,16 @@ main {
     flex-direction: column;
 }
 
+main a {
+    color: #41313f;
+    text-decoration: none;
+}
+
+main a:hover {
+    color: #31212f;
+    text-decoration: underline;
+}
+
 main .content {
     margin: 0 auto;
 }
@@ -72,6 +82,7 @@ main .content form p {
 main .content form p label {
     text-align: right;
     display: table-cell;
+    padding: 8px;
 }
 
 main .content form p input {
