@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.db import models
-from jobs.models import Job
+from . import models
 
 def createJob(request):
     if request.method == "POST":
@@ -21,7 +20,7 @@ def listJobs(request):
     if request.method == "POST":
         error_string = validateJobSearch(request)
         if error_string is None:
-            jobs_list = Job.objects.all()
+            jobs_list = models.Job.objects.all()
             return render(request, 'listJobs.html', {'jobs': jobs_list})
     return render(request, 'searchJobs.html', {'error_string': error_string})
 
