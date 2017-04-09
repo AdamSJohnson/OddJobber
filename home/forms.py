@@ -3,8 +3,12 @@ from . models import User
 
 from django import forms
 
-class UserCreationForm ( forms.ModelForm ) :
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name']
 
+class UserCreationForm ( forms.ModelForm ) :
 
     password1 = forms.CharField( label = 'Password', widget = forms.PasswordInput )
     password2 = forms.CharField( label = 'Password confirmation', widget = forms.PasswordInput )

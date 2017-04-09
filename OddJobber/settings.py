@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'home.User'
+LOGIN_REDIRECT_URL = 'profile'
 
 
 
