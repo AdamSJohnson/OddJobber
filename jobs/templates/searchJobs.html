@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Search Jobs</h1>
+<form enctype="multipart/form-data" method="post"> {% csrf_token %}
+    Title Contains:<br>
+    <input type="text" name="jobtitle"><br>
+    Description Contains:<br>
+    <input type="text" name="description"><br>
+    Suggested price (Low):<br>
+    <input type="number" name="pricelow"><br>
+    Suggested price (High):<br>
+    <input type="number" name="pricehigh"><br>
+    Zip code:<br>
+    <input type="text" name="zipcode"><br>
+    Expires After:<br>
+    <input type="date" name="duedatelow"><br>
+    Expires Before:<br>
+    <input type="date" name="duedatehigh"><br>
+    <input type="submit">
+</form>
+{% endblock %}

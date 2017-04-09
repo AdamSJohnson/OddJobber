@@ -17,5 +17,7 @@ def createJob(request):
     return render(request, 'createJob.html')
 
 def listJobs(request):
-    jobs_list = Job.objects.all()
-    return render(request, 'listJobs.html', {'jobs': jobs_list})
+    if request.method == "POST":
+        jobs_list = Job.objects.all()
+        return render(request, 'listJobs.html', {'jobs': jobs_list})
+    return render(request, 'searchJobs.html')
