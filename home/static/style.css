@@ -69,6 +69,7 @@ main a:hover {
 
 main .content {
     margin: 0 auto;
+    padding: 16px 0;
 }
 
 main .content form {
@@ -82,15 +83,17 @@ main .content form p {
 main .content form p label {
     text-align: right;
     display: table-cell;
-    padding: 8px;
+    padding-right: 8px;
 }
 
 main .content form p input {
     display: table-cell;
+    margin: 8px;
 }
 
 footer .upper {
-    background-color: #fbf7ec;
+    background-color: #9e8b84;
+    /*background-color: #fbf7ec;*/
     height: 48px;
 }
 
