@@ -41,7 +41,7 @@ class myprofile(DetailView):
 #@login_required()
 class edit_profile(UpdateView):
     model = User
-    fields = ['first_name']
+    fields = ['first_name', 'last_name', 'phone', 'street', 'city', 'state', 'zipcode']
     template_name = 'profile_edit.html'
     form = UserForm
     success_url = reverse_lazy('profile')
