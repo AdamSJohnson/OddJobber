@@ -2,6 +2,9 @@
 
 {% block content %}
 <h1>Search Jobs</h1>
+{% if error_string is not None %}
+    <span style="color:red;"> {{ error_string }} </span>
+{% endif %}
 <form enctype="multipart/form-data" method="post"> {% csrf_token %}
     Title Contains:<br>
     <input type="text" name="jobtitle"><br>
@@ -22,7 +25,7 @@
         <option>Tag 1</option>
         <option>Tag 2</option>
         <option>Tag 3</option>
-    </select>
+    </select><br>
     <input type="submit">
 </form>
 {% endblock %}
