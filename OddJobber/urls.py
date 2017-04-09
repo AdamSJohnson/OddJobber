@@ -14,13 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from django.urls import reverse, reverse_lazy
 from django.contrib import admin
-from django.shortcuts import redirect
+from django.http import HttpResponseRedirect
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^jobs/', include('jobs.urls')),
+    url(r'^$', lambda r: HttpResponseRedirect('home/')),
     url(r'^home/', include('home.urls')),
-    #url(r'^', redirect(reverse_lazy('home')))
 ]
